@@ -1,0 +1,12 @@
+{
+    "name": "softbox/command-injector",
+    "description": "Inject commands from cli in mink parameters",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Softbox\\CommandInjector\\": "src/"
+        }
+    }
+}
