@@ -59,7 +59,13 @@ class CommandInjectorExtension implements ExtensionInterface
     public function load(ContainerBuilder $container, array $config) {
         $input = $container->get('cli.input');
 
-        $container->setParameter('command.suite', $input->getParameterOption('--suite'));
+        $suite = $input->getParameterOption('--suite');
+
+        if (!$suite) {
+            $suite = '';
+        }
+
+        $container->setParameter('command.suite', $suite);
 
         return $container;
     }
